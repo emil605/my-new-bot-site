@@ -101,9 +101,9 @@
 
         <div class="coins">
 
-            ⭐ <b>0</b>
+    ⭐ <b id="gamesBalance">0</b>
 
-        </div>
+</div>
 
 
         <button class="add">
@@ -1197,15 +1197,27 @@ async function loadBalance() {
 
         const data = await response.json();
 
-        const balance =
-            document.getElementById("profileBalance");
+        const profileBalance =
+    document.getElementById("profileBalance");
 
-        if (balance) {
+const gamesBalance =
+    document.getElementById("gamesBalance");
 
-            balance.textContent =
-                "⭐ " + data.balance;
 
-        }
+if (profileBalance) {
+
+    profileBalance.textContent =
+        "⭐ " + data.balance;
+
+}
+
+
+if (gamesBalance) {
+
+    gamesBalance.textContent =
+        data.balance;
+
+}
 
     } catch (error) {
 
