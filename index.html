@@ -1,373 +1,733 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Моё приложение</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 
 <body>
 
+
+<!-- ========================= -->
+<!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+<!-- ========================= -->
+
 <header class="top">
-    <button class="close">Закрыть</button>
+
+    <button class="close">
+        Закрыть
+    </button>
+
 
     <div class="title">
-        <b>Моё приложение</b>
-        <span>мини-приложение</span>
+
+        <b>
+            Моё приложение
+        </b>
+
+        <span>
+            мини-приложение
+        </span>
+
     </div>
 
-    <button class="more">•••</button>
+
+    <button class="more">
+        •••
+    </button>
+
 </header>
 
 
+
+<!-- ========================= -->
+<!-- ОСНОВНОЕ СОДЕРЖИМОЕ -->
+<!-- ========================= -->
+
 <main>
 
-    <!-- ЭКРАН ИГР -->
-    <section id="gamesPage" class="page">
 
-        <section class="banner">
-            <div class="banner-text">
-                <h1>NFT 👑</h1>
-                <p>Коллекционируй<br>и зарабатывай!</p>
-            </div>
+<!-- ========================= -->
+<!-- ИГРЫ -->
+<!-- ========================= -->
 
-            <div class="cat">🐱</div>
-        </section>
+<section
+    id="gamesPage"
+    class="page"
+>
 
 
-        <section class="balance">
-            <div class="coins">
-                ⭐ <b>0</b>
-            </div>
+    <section class="banner">
 
-            <button class="add">
-                ＋ &nbsp; Пополнить
-            </button>
-        </section>
+        <div class="banner-text">
 
+            <h1>
+                NFT 👑
+            </h1>
 
-        <div class="categories">
-
-            <button class="category active">
-                <span>♛</span>
-                <b>LIVE</b>
-            </button>
-
-            <button class="category">
-                <span>🎁</span>
-                <b>Бесплатно</b>
-            </button>
-
-            <button class="category">
-                <span>💼</span>
-                <b>Кейсы</b>
-            </button>
-
-            <button class="category">
-                <span>⬆️</span>
-                <b>Апгрейд</b>
-            </button>
-
-            <button class="category">
-                <span>🚀</span>
-                <b>Краш</b>
-            </button>
+            <p>
+                Коллекционируй<br>
+                и зарабатывай!
+            </p>
 
         </div>
 
 
-        <div class="items">
-
-            <div class="item free">
-                <div class="item-icon">🎁</div>
-
-                <div class="item-info">
-                    <h2>Бесплатно</h2>
-                    <p><span>0</span> кейсов</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
-
-            <div class="item cases">
-                <div class="item-icon">💼</div>
-
-                <div class="item-info">
-                    <h2>Кейсы</h2>
-                    <p><span>0</span> кейсов</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
-
-            <div class="item upgrade">
-                <div class="item-icon">⬆️</div>
-
-                <div class="item-info">
-                    <h2>Апгрейд</h2>
-                    <p><span>0</span> улучшений</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
-
-            <div class="item crash">
-                <div class="item-icon">🚀</div>
-
-                <div class="item-info">
-                    <h2>Краш</h2>
-                    <p><span>0</span> игр</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
-
-            <div class="item mines">
-                <div class="item-icon">🐱</div>
-
-                <div class="item-info">
-                    <h2>Мины</h2>
-                    <p><span>0</span> игр</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
-
-            <div class="item plinko">
-                <div class="item-icon">🎱</div>
-
-                <div class="item-info">
-                    <h2>Plinko</h2>
-                    <p><span>0</span> игр</p>
-                </div>
-
-                <div class="arrow">›</div>
-            </div>
-
+        <div class="cat">
+            🐱
         </div>
 
     </section>
 
 
-    <!-- ЭКРАН КОНКУРСОВ -->
-    <section id="contestsPage" class="page" style="display: none;">
 
-        <div class="contest-header">
-            <h1>🏆 Конкурсы</h1>
-            <p>Участвуй и получай награды</p>
-        </div>
+    <section class="balance">
 
+        <div class="coins">
 
-        <div class="contest-card active-contest">
-
-            <div class="contest-icon">
-                🏆
-            </div>
-
-            <div class="contest-info">
-                <span class="contest-status">АКТИВЕН</span>
-
-                <h2>NFT Battle</h2>
-
-                <p>Собери больше очков и получи награду!</p>
-
-                <div class="contest-details">
-                    <span>🎁 500 ⭐</span>
-                    <span>👥 0 участников</span>
-                </div>
-
-            </div>
+            ⭐ <b>0</b>
 
         </div>
 
 
-        <div class="contest-time">
+        <button class="add">
 
-            <div>
-                <span>До окончания</span>
-                <b>3 дня</b>
-            </div>
+            ＋ &nbsp; Пополнить
 
-            <div>
-                <span>Участников</span>
-                <b>0 / 100</b>
-            </div>
-
-        </div>
-
-
-        <h2 class="section-title">
-            Завершённые конкурсы
-        </h2>
-
-
-        <div class="contest-card finished">
-
-            <div class="contest-icon">
-                🏅
-            </div>
-
-            <div class="contest-info">
-                <span class="contest-status finished-status">
-                    ЗАВЕРШЁН
-                </span>
-
-                <h2>Первый конкурс</h2>
-
-                <p>Конкурс завершён</p>
-
-                <div class="contest-details">
-                    <span>🎁 100 ⭐</span>
-                    <span>👥 25 участников</span>
-                </div>
-
-            </div>
-
-        </div>
+        </button>
 
     </section>
 
 
-    <!-- ЭКРАН ЗАДАНИЙ -->
-    <section id="tasksPage" class="page" style="display: none;">
 
-        <div class="tasks-header">
-            <h1>💼 Задания</h1>
-            <p>Выполняй задания и получай ⭐</p>
-        </div>
+    <div class="categories">
 
 
-        <!-- ОБЩАЯ НАГРАДА -->
-        <div class="tasks-balance">
+        <button class="category active">
 
-            <div>
-                <span>Заработано за задания</span>
-                <b>⭐ 0</b>
-            </div>
+            <span>
+                ♛
+            </span>
 
-            <div class="tasks-count">
-                <span>Выполнено</span>
-                <b>0</b>
-            </div>
+            <b>
+                LIVE
+            </b>
 
-        </div>
-
-        </section>
-
-        <!-- ЗАДАНИЕ 1 -->
-        <div class="task-card">
-
-            <div class="task-icon">
-                📱
-            </div>
-
-            <div class="task-info">
-
-                <span class="task-label">
-                    НОВОЕ
-                </span>
-
-                <h2>Подпишись на канал</h2>
-
-                <p>
-                    Подпишись на наш Telegram-канал
-                    и получи награду.
-                </p>
-
-                <div class="task-bottom">
-
-                    <b>⭐ +50</b>
-
-                    <button class="task-button">
-                        Выполнить
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- ЗАДАНИЕ 2 -->
-        <div class="task-card">
+        <button class="category">
 
-            <div class="task-icon">
-                ⭐
-            </div>
+            <span>
+                🎁
+            </span>
 
-            <div class="task-info">
+            <b>
+                Бесплатно
+            </b>
 
-                <span class="task-label">
-                    ЗАДАНИЕ
-                </span>
-
-                <h2>Пригласи друга</h2>
-
-                <p>
-                    Пригласи друга в приложение
-                    и получи бонус.
-                </p>
-
-                <div class="task-bottom">
-
-                    <b>⭐ +100</b>
-
-                    <button class="task-button">
-                        Выполнить
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- ЗАДАНИЕ 3 -->
-        <div class="task-card">
+        <button class="category">
 
-            <div class="task-icon">
+            <span>
+                💼
+            </span>
+
+            <b>
+                Кейсы
+            </b>
+
+        </button>
+
+
+        <button class="category">
+
+            <span>
+                ⬆️
+            </span>
+
+            <b>
+                Апгрейд
+            </b>
+
+        </button>
+
+
+        <button class="category">
+
+            <span>
+                🚀
+            </span>
+
+            <b>
+                Краш
+            </b>
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="items">
+
+
+        <div class="item free">
+
+            <div class="item-icon">
                 🎁
             </div>
 
-            <div class="task-info">
 
-                <span class="task-label">
-                    ЗАДАНИЕ
-                </span>
+            <div class="item-info">
 
-                <h2>Открой приложение</h2>
+                <h2>
+                    Бесплатно
+                </h2>
 
                 <p>
-                    Просто открой приложение
-                    и получи ежедневную награду.
+                    <span>0</span> кейсов
                 </p>
 
-                <div class="task-bottom">
+            </div>
 
-                    <b>⭐ +25</b>
 
-                    <button class="task-button">
-                        Выполнить
-                    </button>
+            <div class="arrow">
+                ›
+            </div>
 
-                </div>
+        </div>
+
+
+
+        <div class="item cases">
+
+            <div class="item-icon">
+                💼
+            </div>
+
+
+            <div class="item-info">
+
+                <h2>
+                    Кейсы
+                </h2>
+
+                <p>
+                    <span>0</span> кейсов
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+
+        <div class="item upgrade">
+
+            <div class="item-icon">
+                ⬆️
+            </div>
+
+
+            <div class="item-info">
+
+                <h2>
+                    Апгрейд
+                </h2>
+
+                <p>
+                    <span>0</span> улучшений
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+
+        <div class="item crash">
+
+            <div class="item-icon">
+                🚀
+            </div>
+
+
+            <div class="item-info">
+
+                <h2>
+                    Краш
+                </h2>
+
+                <p>
+                    <span>0</span> игр
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+
+        <div class="item mines">
+
+            <div class="item-icon">
+                🐱
+            </div>
+
+
+            <div class="item-info">
+
+                <h2>
+                    Мины
+                </h2>
+
+                <p>
+                    <span>0</span> игр
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+
+        <div class="item plinko">
+
+            <div class="item-icon">
+                🎱
+            </div>
+
+
+            <div class="item-info">
+
+                <h2>
+                    Plinko
+                </h2>
+
+                <p>
+                    <span>0</span> игр
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- ========================= -->
+<!-- КОНКУРСЫ -->
+<!-- ========================= -->
+
+<section
+    id="contestsPage"
+    class="page"
+    style="display: none;"
+>
+
+
+    <div class="contest-header">
+
+        <h1>
+            🏆 Конкурсы
+        </h1>
+
+        <p>
+            Участвуй и получай награды
+        </p>
+
+    </div>
+
+
+
+    <!-- АКТИВНЫЙ КОНКУРС -->
+
+    <div class="contest-card active-contest">
+
+
+        <div class="contest-icon">
+            🏆
+        </div>
+
+
+        <div class="contest-info">
+
+            <span class="contest-status">
+                АКТИВЕН
+            </span>
+
+
+            <h2>
+                NFT Battle
+            </h2>
+
+
+            <p>
+                Собери больше очков и получи награду!
+            </p>
+
+
+            <div class="contest-details">
+
+                <span>
+                    🎁 500 ⭐
+                </span>
+
+                <span>
+                    👥 0 участников
+                </span>
 
             </div>
 
         </div>
 
-    </section>
 
-    <!-- ЭКРАН ПРОФИЛЯ -->
-<section id="profilePage" class="page" style="display: none;">
+    </div>
+
+
+
+    <!-- ВРЕМЯ КОНКУРСА -->
+
+    <div class="contest-time">
+
+
+        <div>
+
+            <span>
+                До окончания
+            </span>
+
+            <b>
+                3 дня
+            </b>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Участников
+            </span>
+
+            <b>
+                0 / 100
+            </b>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ЗАВЕРШЁННЫЕ -->
+
+    <h2 class="section-title">
+
+        Завершённые конкурсы
+
+    </h2>
+
+
+
+    <div class="contest-card finished">
+
+
+        <div class="contest-icon">
+            🏅
+        </div>
+
+
+        <div class="contest-info">
+
+            <span class="contest-status finished-status">
+                ЗАВЕРШЁН
+            </span>
+
+
+            <h2>
+                Первый конкурс
+            </h2>
+
+
+            <p>
+                Конкурс завершён
+            </p>
+
+
+            <div class="contest-details">
+
+                <span>
+                    🎁 100 ⭐
+                </span>
+
+                <span>
+                    👥 25 участников
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- ========================= -->
+<!-- ЗАДАНИЯ -->
+<!-- ========================= -->
+
+<section
+    id="tasksPage"
+    class="page"
+    style="display: none;"
+>
+
+    <div class="tasks-header">
+
+        <h1>
+            💼 Задания
+        </h1>
+
+        <p>
+            Выполняй задания и получай ⭐
+        </p>
+
+    </div>
+
+
+    <!-- ОБЩАЯ НАГРАДА -->
+
+    <div class="tasks-balance">
+
+        <div>
+
+            <span>
+                Заработано за задания
+            </span>
+
+            <b>
+                ⭐ 0
+            </b>
+
+        </div>
+
+
+        <div class="tasks-count">
+
+            <span>
+                Выполнено
+            </span>
+
+            <b>
+                0
+            </b>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ЗАДАНИЕ 1 -->
+
+    <div class="task-card">
+
+        <div class="task-icon">
+            📱
+        </div>
+
+
+        <div class="task-info">
+
+            <span class="task-label">
+                НОВОЕ
+            </span>
+
+
+            <h2>
+                Подпишись на канал
+            </h2>
+
+
+            <p>
+                Подпишись на наш Telegram-канал
+                и получи награду.
+            </p>
+
+
+            <div class="task-bottom">
+
+                <b>
+                    ⭐ +50
+                </b>
+
+
+                <button class="task-button">
+                    Выполнить
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ЗАДАНИЕ 2 -->
+
+    <div class="task-card">
+
+        <div class="task-icon">
+            ⭐
+        </div>
+
+
+        <div class="task-info">
+
+            <span class="task-label">
+                ЗАДАНИЕ
+            </span>
+
+
+            <h2>
+                Пригласи друга
+            </h2>
+
+
+            <p>
+                Пригласи друга в приложение
+                и получи бонус.
+            </p>
+
+
+            <div class="task-bottom">
+
+                <b>
+                    ⭐ +100
+                </b>
+
+
+                <button class="task-button">
+                    Выполнить
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ЗАДАНИЕ 3 -->
+
+    <div class="task-card">
+
+        <div class="task-icon">
+            🎁
+        </div>
+
+
+        <div class="task-info">
+
+            <span class="task-label">
+                ЗАДАНИЕ
+            </span>
+
+
+            <h2>
+                Открой приложение
+            </h2>
+
+
+            <p>
+                Просто открой приложение
+                и получи ежедневную награду.
+            </p>
+
+
+            <div class="task-bottom">
+
+                <b>
+                    ⭐ +25
+                </b>
+
+
+                <button class="task-button">
+                    Выполнить
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- ========================= -->
+<!-- ПРОФИЛЬ -->
+<!-- ========================= -->
+
+<section
+    id="profilePage"
+    class="page"
+    style="display: none;"
+>
+
+
+    <!-- ШАПКА ПРОФИЛЯ -->
 
     <div class="profile-header">
 
@@ -375,75 +735,162 @@
             👤
         </div>
 
-        <h1>Мой профиль</h1>
 
-        <p>Добро пожаловать!</p>
+        <h1 id="profileName">
+            Пользователь
+        </h1>
+
+
+        <p id="profileUsername">
+            @username
+        </p>
 
     </div>
+
 
 
     <!-- БАЛАНС -->
 
     <div class="profile-balance">
 
-        <span>Ваш баланс</span>
+        <span>
+            Ваш баланс
+        </span>
 
-        <b>⭐ 0</b>
+
+        <b>
+            ⭐ 0
+        </b>
 
     </div>
 
 
-    <!-- ИНФОРМАЦИЯ -->
+
+    <!-- ДАННЫЕ ПОЛЬЗОВАТЕЛЯ -->
 
     <div class="profile-card">
 
-        <div class="profile-row">
-            <span>👤 Имя</span>
-            <b>Пользователь</b>
-        </div>
 
         <div class="profile-row">
-            <span>🆔 ID</span>
-            <b>Не указан</b>
+
+            <span>
+                👤 Имя
+            </span>
+
+            <b id="profileFirstName">
+                Пользователь
+            </b>
+
         </div>
+
+
+
+        <div class="profile-row">
+
+            <span>
+                📱 Username
+            </span>
+
+            <b id="profileUserName">
+                @username
+            </b>
+
+        </div>
+
+
+
+        <div class="profile-row">
+
+            <span>
+                🆔 Telegram ID
+            </span>
+
+            <b id="profileId">
+                Не указан
+            </b>
+
+        </div>
+
 
     </div>
+
 
 
     <!-- СТАТИСТИКА -->
 
     <div class="profile-stats">
 
-        <div class="stat">
-            <span>🎮</span>
-            <b>0</b>
-            <small>Игр</small>
-        </div>
 
         <div class="stat">
-            <span>🏆</span>
-            <b>0</b>
-            <small>Конкурсов</small>
+
+            <span>
+                🎮
+            </span>
+
+            <b>
+                0
+            </b>
+
+            <small>
+                Игр
+            </small>
+
         </div>
 
+
+
         <div class="stat">
-            <span>💼</span>
-            <b>0</b>
-            <small>Заданий</small>
+
+            <span>
+                🏆
+            </span>
+
+            <b>
+                0
+            </b>
+
+            <small>
+                Конкурсов
+            </small>
+
         </div>
+
+
+
+        <div class="stat">
+
+            <span>
+                💼
+            </span>
+
+            <b>
+                0
+            </b>
+
+            <small>
+                Заданий
+            </small>
+
+        </div>
+
 
     </div>
+
 
 
     <!-- РЕФЕРАЛЬНАЯ СИСТЕМА -->
 
     <div class="profile-card">
 
-        <h2>👥 Пригласить друга</h2>
+        <h2>
+            👥 Пригласить друга
+        </h2>
+
 
         <p>
             Приглашай друзей и получай бонусы.
         </p>
+
 
         <button class="profile-button">
             🔗 Моя реферальная ссылка
@@ -452,15 +899,20 @@
     </div>
 
 
+
     <!-- НАСТРОЙКИ -->
 
     <div class="profile-card">
 
-        <h2>⚙️ Настройки</h2>
+        <h2>
+            ⚙️ Настройки
+        </h2>
+
 
         <button class="profile-button">
             🔔 Уведомления
         </button>
+
 
         <button class="profile-button">
             🌐 Язык
@@ -468,125 +920,246 @@
 
     </div>
 
+
 </section>
 
 </main>
 
 
+<!-- ========================= -->
 <!-- НИЖНЕЕ МЕНЮ -->
+<!-- ========================= -->
+
 <nav class="bottom">
 
-    <button class="nav-item selected" data-page="games">
-        <span>🎮</span>
-        <small>Игры</small>
+
+    <button
+        class="nav-item selected"
+        data-page="games"
+    >
+
+        <span>
+            🎮
+        </span>
+
+        <small>
+            Игры
+        </small>
+
     </button>
 
 
-    <button class="nav-item" data-page="contests">
-        <span>🏆</span>
-        <small>Конкурсы</small>
+
+    <button
+        class="nav-item"
+        data-page="contests"
+    >
+
+        <span>
+            🏆
+        </span>
+
+        <small>
+            Конкурсы
+        </small>
+
     </button>
 
 
-    <button class="nav-item tasks" data-page="tasks">
-        <span>💼</span>
-        <i>0</i>
-        <small>Задания</small>
+
+    <button
+        class="nav-item tasks"
+        data-page="tasks"
+    >
+
+        <span>
+            💼
+        </span>
+
+        <i>
+            0
+        </i>
+
+        <small>
+            Задания
+        </small>
+
     </button>
 
 
-    <button class="nav-item">
-        <span>🔄</span>
-        <small>Турнир</small>
+
+    <button
+        class="nav-item"
+        data-page="tournament"
+    >
+
+        <span>
+            🔄
+        </span>
+
+        <small>
+            Турнир
+        </small>
+
     </button>
 
 
-    <button class="nav-item" data-page="profile">
-    <span>♙</span>
-    <small>Профиль</small>
-</button>
+
+    <button
+        class="nav-item"
+        data-page="profile"
+    >
+
+        <span>
+            👤
+        </span>
+
+        <small>
+            Профиль
+        </small>
+
+    </button>
+
 
 </nav>
 
-
 <script>
 
-    /* КАТЕГОРИИ ИГР */
 
-    const categories = document.querySelectorAll(".category");
+/* ========================= */
+/* КАТЕГОРИИ ИГР */
+/* ========================= */
 
-    categories.forEach(button => {
+const categories =
+    document.querySelectorAll(".category");
 
-        button.addEventListener("click", () => {
 
-            categories.forEach(item => {
-                item.classList.remove("active");
-            });
+categories.forEach(button => {
 
-            button.classList.add("active");
+    button.addEventListener("click", () => {
 
+        categories.forEach(item => {
+            item.classList.remove("active");
         });
+
+        button.classList.add("active");
 
     });
 
-
-    /* СТРАНИЦЫ */
-
-    const gamesPage = document.getElementById("gamesPage");
-    const contestsPage = document.getElementById("contestsPage");
-    const tasksPage = document.getElementById("tasksPage");
-    const profilePage = document.getElementById("profilePage");
-
-    const navItems = document.querySelectorAll(".nav-item");
+});
 
 
-    navItems.forEach(button => {
 
-        button.addEventListener("click", () => {
+/* ========================= */
+/* СТРАНИЦЫ */
+/* ========================= */
 
-            const page = button.dataset.page;
+const gamesPage =
+    document.getElementById("gamesPage");
 
+const contestsPage =
+    document.getElementById("contestsPage");
 
-            /* Сначала скрываем всё */
+const tasksPage =
+    document.getElementById("tasksPage");
 
-            gamesPage.style.display = "none";
-            contestsPage.style.display = "none";
-            tasksPage.style.display = "none";
-            profilePage.style.display = "none";
-
-            /* Показываем нужную страницу */
-
-            if (page === "games") {
-                gamesPage.style.display = "block";
-            }
+const profilePage =
+    document.getElementById("profilePage");
 
 
-            if (page === "contests") {
-                contestsPage.style.display = "block";
-            }
+const navItems =
+    document.querySelectorAll(".nav-item");
 
 
-            if (page === "tasks") {
-                tasksPage.style.display = "block";
-            }
 
-            if (page === "profile") {
-                profilePage.style.display = "block";
-            }
+/* ========================= */
+/* ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ */
+/* ========================= */
 
-            /* Активная кнопка */
+navItems.forEach(button => {
 
-            navItems.forEach(item => {
-                item.classList.remove("selected");
-            });
+    button.addEventListener("click", () => {
 
-            button.classList.add("selected");
+
+        const page =
+            button.dataset.page;
+
+
+        /* Скрываем все страницы */
+
+        gamesPage.style.display = "none";
+
+        contestsPage.style.display = "none";
+
+        tasksPage.style.display = "none";
+
+        profilePage.style.display = "none";
+
+
+        /* Показываем нужную страницу */
+
+        if (page === "games") {
+
+            gamesPage.style.display = "block";
+
+        }
+
+
+        if (page === "contests") {
+
+            contestsPage.style.display = "block";
+
+        }
+
+
+        if (page === "tasks") {
+
+            tasksPage.style.display = "block";
+
+        }
+
+
+        if (page === "profile") {
+
+            profilePage.style.display = "block";
+
+        }
+
+
+        /* Активная кнопка */
+
+        navItems.forEach(item => {
+
+            item.classList.remove("selected");
 
         });
 
+
+        button.classList.add("selected");
+
     });
+
+});
+
+
+
+/* ========================= */
+/* ЗАКРЫТЬ */
+/* ========================= */
+
+const closeButton =
+    document.querySelector(".close");
+
+
+closeButton.addEventListener("click", () => {
+
+    window.history.back();
+
+});
+
 
 </script>
+
 
 </body>
 </html>
