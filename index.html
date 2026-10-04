@@ -1024,20 +1024,26 @@
 
 <script>
 
-const tg = window.Telegram.WebApp;
 
-tg.ready();
-tg.expand();
+// =========================
+// TELEGRAM
+// =========================
+
+const tg = window.Telegram?.WebApp;
+
+if (tg) {
+    tg.ready();
+    tg.expand();
+}
 
 
-/* ========================= */
-/* ДАННЫЕ TELEGRAM */
-/* ========================= */
+// =========================
+// ДАННЫЕ ПРОФИЛЯ
+// =========================
 
-const user = tg.initDataUnsafe.user;
+if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
 
-
-if (user) {
+    const user = tg.initDataUnsafe.user;
 
     const firstName =
         user.first_name || "Пользователь";
@@ -1051,54 +1057,48 @@ if (user) {
         user.id || "Не указан";
 
 
-    /* Имя сверху */
+    const profileName =
+        document.getElementById("profileName");
 
-    document.getElementById("profileName").textContent =
-        firstName;
+    const profileUsername =
+        document.getElementById("profileUsername");
 
+    const profileFirstName =
+        document.getElementById("profileFirstName");
 
-    /* Username сверху */
+    const profileUserName =
+        document.getElementById("profileUserName");
 
-    document.getElementById("profileUsername").textContent =
-        username;
+    const profileId =
+        document.getElementById("profileId");
 
-
-    /* Имя */
-
-    document.getElementById("profileFirstName").textContent =
-        firstName;
-
-
-    /* Username */
-
-    document.getElementById("profileUserName").textContent =
-        username;
+    const profilePhoto =
+        document.getElementById("profilePhoto");
 
 
-    /* ID */
+    if (profileName)
+        profileName.textContent = firstName;
 
-    document.getElementById("profileId").textContent =
-        userId;
+    if (profileUsername)
+        profileUsername.textContent = username;
 
+    if (profileFirstName)
+        profileFirstName.textContent = firstName;
 
-    /* Фото */
+    if (profileUserName)
+        profileUserName.textContent = username;
 
-    if (user.photo_url) {
+    if (profileId)
+        profileId.textContent = userId;
 
-        const photo =
-            document.getElementById("profilePhoto");
-
-        photo.src = user.photo_url;
-
-    }
-
+    if (profilePhoto && user.photo_url)
+        profilePhoto.src = user.photo_url;
 }
 
 
-
-/* ========================= */
-/* КАТЕГОРИИ ИГР */
-/* ========================= */
+// =========================
+// КАТЕГОРИИ
+// =========================
 
 const categories =
     document.querySelectorAll(".category");
@@ -1119,32 +1119,34 @@ categories.forEach(button => {
 });
 
 
+// =========================
+// СТРАНИЦЫ
+// =========================
 
-/* ========================= */
-/* СТРАНИЦЫ */
-/* ========================= */
+const pages = {
 
-const gamesPage =
-    document.getElementById("gamesPage");
+    games:
+        document.getElementById("gamesPage"),
 
-const contestsPage =
-    document.getElementById("contestsPage");
+    contests:
+        document.getElementById("contestsPage"),
 
-const tasksPage =
-    document.getElementById("tasksPage");
+    tasks:
+        document.getElementById("tasksPage"),
 
-const profilePage =
-    document.getElementById("profilePage");
+    profile:
+        document.getElementById("profilePage")
 
+};
+
+
+// =========================
+// НИЖНЕЕ МЕНЮ
+// =========================
 
 const navItems =
     document.querySelectorAll(".nav-item");
 
-
-
-/* ========================= */
-/* ПЕРЕКЛЮЧЕНИЕ */
-/* ========================= */
 
 navItems.forEach(button => {
 
@@ -1154,39 +1156,36 @@ navItems.forEach(button => {
             button.dataset.page;
 
 
-        gamesPage.style.display = "none";
+        // Скрываем все существующие страницы
 
-        contestsPage.style.display = "none";
+        Object.values(pages).forEach(section => {
 
-        tasksPage.style.display = "none";
+            if (section) {
+                section.style.display = "none";
+            }
 
-        profilePage.style.display = "none";
-
-
-        if (page === "games") {
-            gamesPage.style.display = "block";
-        }
-
-
-        if (page === "contests") {
-            contestsPage.style.display = "block";
-        }
-
-
-        if (page === "tasks") {
-            tasksPage.style.display = "block";
-        }
-
-
-        if (page === "profile") {
-            profilePage.style.display = "block";
-        }
-
-
-        navItems.forEach(item => {
-            item.classList.remove("selected");
         });
 
+
+        // Показываем выбранную
+
+        if (pages[page]) {
+
+            pages[page].style.display = "block";
+
+        }
+
+
+        // Убираем активность
+
+        navItems.forEach(item => {
+
+            item.classList.remove("selected");
+
+        });
+
+
+        // Делаем кнопку активной
 
         button.classList.add("selected");
 
@@ -1195,19 +1194,27 @@ navItems.forEach(button => {
 });
 
 
-/* ========================= */
-/* ЗАКРЫТЬ */
-/* ========================= */
+// =========================
+// КНОПКА ЗАКРЫТЬ
+// =========================
 
 const closeButton =
     document.querySelector(".close");
 
 
-closeButton.addEventListener("click", () => {
+if (closeButton) {
 
-    tg.close();
+    closeButton.addEventListener("click", () => {
 
-});
+        if (tg) {
+            tg.close();
+        } else {
+            window.history.back();
+        }
+
+    });
+
+}
 
 </script>
 
