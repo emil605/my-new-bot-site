@@ -1,74 +1,207 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App — Профиль</title>
+    <title>Игры</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <button class="back">‹ Назад</button>
-    <h2>Профиль 👑</h2>
-    <button class="settings">⚙️</button>
+<header class="top">
+    <button class="close">Закрыть</button>
+
+    <div class="title">
+        <b>Предложка Новости и Факт...</b>
+        <span>мини-приложение</span>
+    </div>
+
+    <button class="more">•••</button>
 </header>
 
+
 <main>
-    <section class="profile card">
-        <div class="avatar">🐺</div>
-        <div class="profile-info">
-            <h2>@MyUsername</h2>
-            <p>ID: 123456789</p>
-            <div class="level">💜 Уровень 1</div>
-            <p class="xp">0 / 100 XP</p>
+
+    <!-- БАННЕР -->
+    <section class="banner">
+        <div class="banner-text">
+            <h1>NFT 👑</h1>
+            <p>Коллекционируй<br>и зарабатывай!</p>
         </div>
+
+        <div class="cat">🐱</div>
     </section>
 
-    <section class="card">
-        <h2>💰 Баланс</h2>
-        <div class="balance">
-            <div>⭐<p>Монеты</p><strong>0</strong></div>
-            <div>🎁<p>Кейсы</p><strong>0</strong></div>
-            <div>💎<p>NFT</p><strong>0</strong></div>
+
+    <!-- БАЛАНС -->
+    <section class="balance">
+        <div class="coins">
+            ⭐ <b>0</b>
         </div>
-        <button class="primary">＋ Пополнить</button>
+
+        <button class="add">
+            ＋ &nbsp; Пополнить
+        </button>
     </section>
 
-    <section class="card">
-        <h2>📊 Моя статистика</h2>
-        <div class="balance">
-            <div>🎮<p>Игр сыграно</p><strong>0</strong></div>
-            <div>🏆<p>Побед</p><strong>0</strong></div>
-            <div>🎁<p>Кейсов открыто</p><strong>0</strong></div>
-            <div>💎<p>NFT получено</p><strong>0</strong></div>
+
+    <!-- КАТЕГОРИИ -->
+    <div class="categories">
+
+        <button class="category active">
+            <span>♛</span>
+            <b>LIVE</b>
+        </button>
+
+        <button class="category">
+            <span>🎁</span>
+            <b>Бесплатно</b>
+        </button>
+
+        <button class="category">
+            <span>💼</span>
+            <b>Кейсы</b>
+        </button>
+
+        <button class="category">
+            <span>⬆️</span>
+            <b>Апгрейд</b>
+        </button>
+
+        <button class="category">
+            <span>🚀</span>
+            <b>Краш</b>
+        </button>
+
+    </div>
+
+
+    <!-- КАРТОЧКИ -->
+    <div class="items">
+
+        <div class="item free">
+            <div class="item-icon">🎁</div>
+
+            <div class="item-info">
+                <h2>Бесплатно</h2>
+                <p><span>0</span> кейсов</p>
+            </div>
+
+            <div class="arrow">›</div>
         </div>
-    </section>
 
-    <section class="card nft">
-        <h2>🖼️ Мои NFT</h2>
-        <p>Пока коллекция пуста</p>
-        <p>Открывай кейсы и участвуй в играх, чтобы получить NFT!</p>
-        <button class="primary">Моя коллекция ›</button>
-    </section>
 
-    <section class="card">
-        <h2>⚙️ Настройки</h2>
-        <div class="setting">🔔 Уведомления <span>›</span></div>
-        <div class="setting">🌐 Язык <span>Русский　›</span></div>
-        <div class="setting">🎧 Поддержка <span>›</span></div>
-        <div class="setting">📄 История операций <span>›</span></div>
-    </section>
+        <div class="item cases">
+            <div class="item-icon">💼</div>
+
+            <div class="item-info">
+                <h2>Кейсы</h2>
+                <p><span>0</span> кейсов</p>
+            </div>
+
+            <div class="arrow">›</div>
+        </div>
+
+
+        <div class="item upgrade">
+            <div class="item-icon">⬆️</div>
+
+            <div class="item-info">
+                <h2>Апгрейд</h2>
+                <p><span>0</span> улучшений</p>
+            </div>
+
+            <div class="arrow">›</div>
+        </div>
+
+
+        <div class="item crash">
+            <div class="item-icon">🚀</div>
+
+            <div class="item-info">
+                <h2>Краш</h2>
+                <p><span>0</span> игр</p>
+            </div>
+
+            <div class="arrow">›</div>
+        </div>
+
+
+        <div class="item mines">
+            <div class="item-icon">🐱</div>
+
+            <div class="item-info">
+                <h2>Мины</h2>
+                <p><span>0</span> игр</p>
+            </div>
+
+            <div class="arrow">›</div>
+        </div>
+
+
+        <div class="item plinko">
+            <div class="item-icon">🎱</div>
+
+            <div class="item-info">
+                <h2>Plinko</h2>
+                <p><span>0</span> игр</p>
+            </div>
+
+            <div class="arrow">›</div>
+        </div>
+
+    </div>
+
 </main>
 
+
+<!-- НИЖНЕЕ МЕНЮ -->
 <nav class="bottom">
-    <div>🎮<small>Игры</small></div>
-    <div>🏆<small>Конкурсы</small></div>
-    <div>🎁<small>Задания</small></div>
-    <div>🔄<small>Турнир</small></div>
-    <div class="active">👤<small>Профиль</small></div>
+
+    <button class="nav-item selected">
+        <span>🎮</span>
+        <small>Игры</small>
+    </button>
+
+    <button class="nav-item">
+        <span>🏆</span>
+        <small>Конкурсы</small>
+    </button>
+
+    <button class="nav-item tasks">
+        <span>💼</span>
+        <i>0</i>
+        <small>Задания</small>
+    </button>
+
+    <button class="nav-item">
+        <span>🔄</span>
+        <small>Турнир</small>
+    </button>
+
+    <button class="nav-item">
+        <span>♙</span>
+        <small>Профиль</small>
+    </button>
+
 </nav>
+
+
+<script>
+    const categories = document.querySelectorAll(".category");
+
+    categories.forEach(button => {
+        button.addEventListener("click", () => {
+
+            categories.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        });
+    });
+</script>
 
 </body>
 </html>
