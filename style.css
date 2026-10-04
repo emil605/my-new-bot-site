@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0d0918;
+    color: white;
+    padding-bottom: 90px;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    border-bottom: 1px solid #241b3b;
+    background: #100b1d;
+}
+
+header h2 {
+    font-size: 20px;
+}
+
+.back,
+.settings {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+main {
+    width: 92%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.card {
+    background: #171126;
+    border: 1px solid #2d2149;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #7c3cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.profile-info h2 {
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    color: #9188a8;
+    font-size: 13px;
+}
+
+.level {
+    margin-top: 8px;
+    color: #b98cff;
+    font-size: 14px;
+}
+
+.xp {
+    margin-top: 5px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+.balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.balance div {
+    background: #21183a;
+    border-radius: 14px;
+    padding: 14px 5px;
+}
+
+.balance div:first-child {
+    background: linear-gradient(145deg, #241746, #30205a);
+}
+
+.balance p {
+    color: #9188a8;
+    font-size: 12px;
+    margin: 6px 0;
+}
+
+.balance strong {
+    font-size: 18px;
+}
+
+.primary {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: #713cff;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary:hover {
+    background: #8254ff;
+}
+
+.nft {
+    text-align: center;
+}
+
+.nft p {
+    color: #9188a8;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.setting {
+    padding: 15px 5px;
+    border-bottom: 1px solid #2b2140;
+    display: flex;
+    justify-content: space-between;
+    color: #ddd6eb;
+}
+
+.setting:last-child {
+    border-bottom: none;
+}
+
+.setting span {
+    color: #817595;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: #100b1d;
+    border-top: 1px solid #2d2149;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom div {
+    text-align: center;
+    color: #766c8c;
+    font-size: 20px;
+}
+
+.bottom small {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.bottom .active {
+    color: #9b6cff;
+}
+
+@media (max-width: 450px) {
+    .balance {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .balance div {
+        padding: 10px 3px;
+    }
+
+    .balance p {
+        font-size: 10px;
+    }
+
+    .balance strong {
+        font-size: 15px;
+    }
+}
