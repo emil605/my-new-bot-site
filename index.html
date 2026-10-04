@@ -755,16 +755,15 @@
 
     <div class="profile-balance">
 
-        <span>
-            Ваш баланс
-        </span>
+    <span>
+        Ваш баланс
+    </span>
 
+    <b id="profileBalance">
+        ⭐ 0
+    </b>
 
-        <b>
-            ⭐ 0
-        </b>
-
-    </div>
+</div>
 
 
 
@@ -1174,6 +1173,52 @@ function loadTelegramProfile() {
 
 loadTelegramProfile();
 
+// =========================
+// БАЛАНС
+// =========================
+
+async function loadBalance() {
+
+    if (!tg) {
+        return;
+    }
+
+    const user = tg.initDataUnsafe?.user;
+
+    if (!user) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "http://127.0.0.1:5000/balance?user_id=" + user.id
+        );
+
+        const data = await response.json();
+
+        const balance =
+            document.getElementById("profileBalance");
+
+        if (balance) {
+
+            balance.textContent =
+                "⭐ " + data.balance;
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Ошибка загрузки баланса:",
+            error
+        );
+
+    }
+
+}
+
+loadBalance();
 
 // =========================
 // КАТЕГОРИИ ИГР
