@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Игры</title>
+    <title>Моё приложение</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,7 +13,7 @@
     <button class="close">Закрыть</button>
 
     <div class="title">
-        <b>Предложка Новости и Факт...</b>
+        <b>Моё приложение</b>
         <span>мини-приложение</span>
     </div>
 
@@ -23,135 +23,220 @@
 
 <main>
 
-    <!-- БАННЕР -->
-    <section class="banner">
-        <div class="banner-text">
-            <h1>NFT 👑</h1>
-            <p>Коллекционируй<br>и зарабатывай!</p>
+    <!-- ЭКРАН ИГР -->
+    <section id="gamesPage" class="page">
+
+        <section class="banner">
+            <div class="banner-text">
+                <h1>NFT 👑</h1>
+                <p>Коллекционируй<br>и зарабатывай!</p>
+            </div>
+
+            <div class="cat">🐱</div>
+        </section>
+
+
+        <section class="balance">
+            <div class="coins">
+                ⭐ <b>0</b>
+            </div>
+
+            <button class="add">
+                ＋ &nbsp; Пополнить
+            </button>
+        </section>
+
+
+        <div class="categories">
+
+            <button class="category active">
+                <span>♛</span>
+                <b>LIVE</b>
+            </button>
+
+            <button class="category">
+                <span>🎁</span>
+                <b>Бесплатно</b>
+            </button>
+
+            <button class="category">
+                <span>💼</span>
+                <b>Кейсы</b>
+            </button>
+
+            <button class="category">
+                <span>⬆️</span>
+                <b>Апгрейд</b>
+            </button>
+
+            <button class="category">
+                <span>🚀</span>
+                <b>Краш</b>
+            </button>
+
         </div>
 
-        <div class="cat">🐱</div>
+
+        <div class="items">
+
+            <div class="item free">
+                <div class="item-icon">🎁</div>
+
+                <div class="item-info">
+                    <h2>Бесплатно</h2>
+                    <p><span>0</span> кейсов</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+
+            <div class="item cases">
+                <div class="item-icon">💼</div>
+
+                <div class="item-info">
+                    <h2>Кейсы</h2>
+                    <p><span>0</span> кейсов</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+
+            <div class="item upgrade">
+                <div class="item-icon">⬆️</div>
+
+                <div class="item-info">
+                    <h2>Апгрейд</h2>
+                    <p><span>0</span> улучшений</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+
+            <div class="item crash">
+                <div class="item-icon">🚀</div>
+
+                <div class="item-info">
+                    <h2>Краш</h2>
+                    <p><span>0</span> игр</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+
+            <div class="item mines">
+                <div class="item-icon">🐱</div>
+
+                <div class="item-info">
+                    <h2>Мины</h2>
+                    <p><span>0</span> игр</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+
+            <div class="item plinko">
+                <div class="item-icon">🎱</div>
+
+                <div class="item-info">
+                    <h2>Plinko</h2>
+                    <p><span>0</span> игр</p>
+                </div>
+
+                <div class="arrow">›</div>
+            </div>
+
+        </div>
+
     </section>
 
 
-    <!-- БАЛАНС -->
-    <section class="balance">
-        <div class="coins">
-            ⭐ <b>0</b>
+    <!-- ЭКРАН КОНКУРСОВ -->
+    <section id="contestsPage" class="page" style="display: none;">
+
+        <div class="contest-header">
+            <h1>🏆 Конкурсы</h1>
+            <p>Участвуй и получай награды</p>
         </div>
 
-        <button class="add">
-            ＋ &nbsp; Пополнить
-        </button>
+
+        <!-- АКТИВНЫЙ КОНКУРС -->
+        <div class="contest-card active-contest">
+
+            <div class="contest-icon">
+                🏆
+            </div>
+
+            <div class="contest-info">
+                <span class="contest-status">АКТИВЕН</span>
+
+                <h2>NFT Battle</h2>
+
+                <p>Собери больше очков и получи награду!</p>
+
+                <div class="contest-details">
+                    <span>🎁 500 ⭐</span>
+                    <span>👥 0 участников</span>
+                </div>
+
+                <button class="join">
+                    Участвовать
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- ВРЕМЯ -->
+        <div class="contest-time">
+
+            <div>
+                <span>До окончания</span>
+                <b>3 дня</b>
+            </div>
+
+            <div>
+                <span>Участников</span>
+                <b>0 / 100</b>
+            </div>
+
+        </div>
+
+
+        <!-- ЗАВЕРШЁННЫЕ -->
+        <h2 class="section-title">
+            Завершённые конкурсы
+        </h2>
+
+
+        <div class="contest-card finished">
+
+            <div class="contest-icon">
+                🏅
+            </div>
+
+            <div class="contest-info">
+                <span class="contest-status finished-status">
+                    ЗАВЕРШЁН
+                </span>
+
+                <h2>Первый конкурс</h2>
+
+                <p>Конкурс завершён</p>
+
+                <div class="contest-details">
+                    <span>🎁 100 ⭐</span>
+                    <span>👥 25 участников</span>
+                </div>
+            </div>
+
+        </div>
+
     </section>
-
-
-    <!-- КАТЕГОРИИ -->
-    <div class="categories">
-
-        <button class="category active">
-            <span>♛</span>
-            <b>LIVE</b>
-        </button>
-
-        <button class="category">
-            <span>🎁</span>
-            <b>Бесплатно</b>
-        </button>
-
-        <button class="category">
-            <span>💼</span>
-            <b>Кейсы</b>
-        </button>
-
-        <button class="category">
-            <span>⬆️</span>
-            <b>Апгрейд</b>
-        </button>
-
-        <button class="category">
-            <span>🚀</span>
-            <b>Краш</b>
-        </button>
-
-    </div>
-
-
-    <!-- КАРТОЧКИ -->
-    <div class="items">
-
-        <div class="item free">
-            <div class="item-icon">🎁</div>
-
-            <div class="item-info">
-                <h2>Бесплатно</h2>
-                <p><span>0</span> кейсов</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-
-        <div class="item cases">
-            <div class="item-icon">💼</div>
-
-            <div class="item-info">
-                <h2>Кейсы</h2>
-                <p><span>0</span> кейсов</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-
-        <div class="item upgrade">
-            <div class="item-icon">⬆️</div>
-
-            <div class="item-info">
-                <h2>Апгрейд</h2>
-                <p><span>0</span> улучшений</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-
-        <div class="item crash">
-            <div class="item-icon">🚀</div>
-
-            <div class="item-info">
-                <h2>Краш</h2>
-                <p><span>0</span> игр</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-
-        <div class="item mines">
-            <div class="item-icon">🐱</div>
-
-            <div class="item-info">
-                <h2>Мины</h2>
-                <p><span>0</span> игр</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-
-        <div class="item plinko">
-            <div class="item-icon">🎱</div>
-
-            <div class="item-info">
-                <h2>Plinko</h2>
-                <p><span>0</span> игр</p>
-            </div>
-
-            <div class="arrow">›</div>
-        </div>
-
-    </div>
 
 </main>
 
@@ -159,15 +244,17 @@
 <!-- НИЖНЕЕ МЕНЮ -->
 <nav class="bottom">
 
-    <button class="nav-item selected">
+    <button class="nav-item selected" data-page="games">
         <span>🎮</span>
         <small>Игры</small>
     </button>
 
-    <button class="nav-item">
+
+    <button class="nav-item" data-page="contests">
         <span>🏆</span>
         <small>Конкурсы</small>
     </button>
+
 
     <button class="nav-item tasks">
         <span>💼</span>
@@ -175,10 +262,12 @@
         <small>Задания</small>
     </button>
 
+
     <button class="nav-item">
         <span>🔄</span>
         <small>Турнир</small>
     </button>
+
 
     <button class="nav-item">
         <span>♙</span>
@@ -189,9 +278,13 @@
 
 
 <script>
+
+    /* КАТЕГОРИИ ИГР */
+
     const categories = document.querySelectorAll(".category");
 
     categories.forEach(button => {
+
         button.addEventListener("click", () => {
 
             categories.forEach(item => {
@@ -199,8 +292,55 @@
             });
 
             button.classList.add("active");
+
         });
+
     });
+
+
+    /* ПЕРЕКЛЮЧЕНИЕ ИГРЫ / КОНКУРСЫ */
+
+    const gamesPage = document.getElementById("gamesPage");
+    const contestsPage = document.getElementById("contestsPage");
+
+    const navItems = document.querySelectorAll(".nav-item");
+
+
+    navItems.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const page = button.dataset.page;
+
+
+            if (page === "games") {
+
+                gamesPage.style.display = "block";
+                contestsPage.style.display = "none";
+
+            }
+
+
+            if (page === "contests") {
+
+                gamesPage.style.display = "none";
+                contestsPage.style.display = "block";
+
+            }
+
+
+            /* Активная кнопка */
+
+            navItems.forEach(item => {
+                item.classList.remove("selected");
+            });
+
+            button.classList.add("selected");
+
+        });
+
+    });
+
 </script>
 
 </body>
