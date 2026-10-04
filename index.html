@@ -1192,7 +1192,7 @@ async function loadBalance() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/balance?user_id=" + user.id
+            "https://my-new-bot-server.onrender.com/balance?user_id=" + user.id
         );
 
         const data = await response.json();
