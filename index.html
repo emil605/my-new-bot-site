@@ -258,6 +258,7 @@
 
         </div>
 
+        </section>
 
         <!-- ЗАДАНИЕ 1 -->
         <div class="task-card">
@@ -365,6 +366,110 @@
 
     </section>
 
+    <!-- ЭКРАН ПРОФИЛЯ -->
+<section id="profilePage" class="page" style="display: none;">
+
+    <div class="profile-header">
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <h1>Мой профиль</h1>
+
+        <p>Добро пожаловать!</p>
+
+    </div>
+
+
+    <!-- БАЛАНС -->
+
+    <div class="profile-balance">
+
+        <span>Ваш баланс</span>
+
+        <b>⭐ 0</b>
+
+    </div>
+
+
+    <!-- ИНФОРМАЦИЯ -->
+
+    <div class="profile-card">
+
+        <div class="profile-row">
+            <span>👤 Имя</span>
+            <b>Пользователь</b>
+        </div>
+
+        <div class="profile-row">
+            <span>🆔 ID</span>
+            <b>Не указан</b>
+        </div>
+
+    </div>
+
+
+    <!-- СТАТИСТИКА -->
+
+    <div class="profile-stats">
+
+        <div class="stat">
+            <span>🎮</span>
+            <b>0</b>
+            <small>Игр</small>
+        </div>
+
+        <div class="stat">
+            <span>🏆</span>
+            <b>0</b>
+            <small>Конкурсов</small>
+        </div>
+
+        <div class="stat">
+            <span>💼</span>
+            <b>0</b>
+            <small>Заданий</small>
+        </div>
+
+    </div>
+
+
+    <!-- РЕФЕРАЛЬНАЯ СИСТЕМА -->
+
+    <div class="profile-card">
+
+        <h2>👥 Пригласить друга</h2>
+
+        <p>
+            Приглашай друзей и получай бонусы.
+        </p>
+
+        <button class="profile-button">
+            🔗 Моя реферальная ссылка
+        </button>
+
+    </div>
+
+
+    <!-- НАСТРОЙКИ -->
+
+    <div class="profile-card">
+
+        <h2>⚙️ Настройки</h2>
+
+        <button class="profile-button">
+            🔔 Уведомления
+        </button>
+
+        <button class="profile-button">
+            🌐 Язык
+        </button>
+
+    </div>
+
+</section>
+
 </main>
 
 
@@ -396,10 +501,10 @@
     </button>
 
 
-    <button class="nav-item">
-        <span>♙</span>
-        <small>Профиль</small>
-    </button>
+    <button class="nav-item" data-page="profile">
+    <span>♙</span>
+    <small>Профиль</small>
+</button>
 
 </nav>
 
@@ -430,6 +535,7 @@
     const gamesPage = document.getElementById("gamesPage");
     const contestsPage = document.getElementById("contestsPage");
     const tasksPage = document.getElementById("tasksPage");
+    const profilePage = document.getElementById("profilePage");
 
     const navItems = document.querySelectorAll(".nav-item");
 
@@ -446,7 +552,7 @@
             gamesPage.style.display = "none";
             contestsPage.style.display = "none";
             tasksPage.style.display = "none";
-
+            profilePage.style.display = "none";
 
             /* Показываем нужную страницу */
 
@@ -464,6 +570,9 @@
                 tasksPage.style.display = "block";
             }
 
+            if (page === "profile") {
+                profilePage.style.display = "block";
+            }
 
             /* Активная кнопка */
 
