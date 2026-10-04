@@ -15,6 +15,9 @@
         rel="stylesheet"
         href="style.css"
     >
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 </head>
 
 
@@ -1024,9 +1027,8 @@
 
 <script>
 
-
 // =========================
-// TELEGRAM
+// TELEGRAM MINI APP
 // =========================
 
 const tg = window.Telegram?.WebApp;
@@ -1038,24 +1040,58 @@ if (tg) {
 
 
 // =========================
-// ДАННЫЕ ПРОФИЛЯ
+// ПРОФИЛЬ TELEGRAM
 // =========================
 
-if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
+function loadTelegramProfile() {
 
-    const user = tg.initDataUnsafe.user;
+    if (!tg) {
+        console.log("Telegram WebApp не найден");
+        return;
+    }
+
+    const user = tg.initDataUnsafe?.user;
+
+    if (!user) {
+        console.log("Пользователь Telegram пока недоступен");
+        return;
+    }
+
+
+    // Имя
 
     const firstName =
-        user.first_name || "Пользователь";
+        user.first_name || "";
+
+    const lastName =
+        user.last_name || "";
+
+
+    const fullName =
+        [firstName, lastName]
+            .filter(Boolean)
+            .join(" ");
+
+
+    // Username
 
     const username =
         user.username
             ? "@" + user.username
-            : "Username отсутствует";
+            : "";
 
-    const userId =
-        user.id || "Не указан";
 
+    // Telegram ID
+
+    const telegramId =
+        user.id
+            ? String(user.id)
+            : "";
+
+
+    // =========================
+    // ВЫВОДИМ ДАННЫЕ
+    // =========================
 
     const profileName =
         document.getElementById("profileName");
@@ -1076,28 +1112,71 @@ if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
         document.getElementById("profilePhoto");
 
 
-    if (profileName)
-        profileName.textContent = firstName;
+    if (profileName) {
 
-    if (profileUsername)
-        profileUsername.textContent = username;
+        profileName.textContent =
+            fullName || "Без имени";
 
-    if (profileFirstName)
-        profileFirstName.textContent = firstName;
+    }
 
-    if (profileUserName)
-        profileUserName.textContent = username;
 
-    if (profileId)
-        profileId.textContent = userId;
+    if (profileUsername) {
 
-    if (profilePhoto && user.photo_url)
-        profilePhoto.src = user.photo_url;
+        profileUsername.textContent =
+            username || "Username отсутствует";
+
+    }
+
+
+    if (profileFirstName) {
+
+        profileFirstName.textContent =
+            fullName || "Без имени";
+
+    }
+
+
+    if (profileUserName) {
+
+        profileUserName.textContent =
+            username || "Username отсутствует";
+
+    }
+
+
+    if (profileId) {
+
+        profileId.textContent =
+            telegramId || "Неизвестно";
+
+    }
+
+
+    // =========================
+    // ФОТО ПРОФИЛЯ
+    // =========================
+
+    if (
+        profilePhoto &&
+        user.photo_url
+    ) {
+
+        profilePhoto.src =
+            user.photo_url;
+
+        profilePhoto.style.display =
+            "block";
+
+    }
+
 }
 
 
+loadTelegramProfile();
+
+
 // =========================
-// КАТЕГОРИИ
+// КАТЕГОРИИ ИГР
 // =========================
 
 const categories =
@@ -1109,8 +1188,11 @@ categories.forEach(button => {
     button.addEventListener("click", () => {
 
         categories.forEach(item => {
+
             item.classList.remove("active");
+
         });
+
 
         button.classList.add("active");
 
@@ -1156,38 +1238,46 @@ navItems.forEach(button => {
             button.dataset.page;
 
 
-        // Скрываем все существующие страницы
+        // Скрываем все страницы
 
         Object.values(pages).forEach(section => {
 
             if (section) {
-                section.style.display = "none";
+
+                section.style.display =
+                    "none";
+
             }
 
         });
 
 
-        // Показываем выбранную
+        // Показываем нужную
 
         if (pages[page]) {
 
-            pages[page].style.display = "block";
+            pages[page].style.display =
+                "block";
 
         }
 
 
-        // Убираем активность
+        // Убираем активную кнопку
 
         navItems.forEach(item => {
 
-            item.classList.remove("selected");
+            item.classList.remove(
+                "selected"
+            );
 
         });
 
 
-        // Делаем кнопку активной
+        // Выбираем текущую
 
-        button.classList.add("selected");
+        button.classList.add(
+            "selected"
+        );
 
     });
 
@@ -1195,7 +1285,7 @@ navItems.forEach(button => {
 
 
 // =========================
-// КНОПКА ЗАКРЫТЬ
+// КНОПКА "ЗАКРЫТЬ"
 // =========================
 
 const closeButton =
@@ -1204,15 +1294,22 @@ const closeButton =
 
 if (closeButton) {
 
-    closeButton.addEventListener("click", () => {
+    closeButton.addEventListener(
+        "click",
+        () => {
 
-        if (tg) {
-            tg.close();
-        } else {
-            window.history.back();
+            if (tg) {
+
+                tg.close();
+
+            } else {
+
+                window.history.back();
+
+            }
+
         }
-
-    });
+    );
 
 }
 
