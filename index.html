@@ -732,9 +732,8 @@
     <div class="profile-header">
 
         <div class="profile-avatar">
-            👤
-        </div>
-
+    <img id="profilePhoto" src="" alt="Фото профиля">
+</div>
 
         <h1 id="profileName">
             Пользователь
@@ -1025,6 +1024,77 @@
 
 <script>
 
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+tg.expand();
+
+
+/* ========================= */
+/* ДАННЫЕ TELEGRAM */
+/* ========================= */
+
+const user = tg.initDataUnsafe.user;
+
+
+if (user) {
+
+    const firstName =
+        user.first_name || "Пользователь";
+
+    const username =
+        user.username
+            ? "@" + user.username
+            : "Username отсутствует";
+
+    const userId =
+        user.id || "Не указан";
+
+
+    /* Имя сверху */
+
+    document.getElementById("profileName").textContent =
+        firstName;
+
+
+    /* Username сверху */
+
+    document.getElementById("profileUsername").textContent =
+        username;
+
+
+    /* Имя */
+
+    document.getElementById("profileFirstName").textContent =
+        firstName;
+
+
+    /* Username */
+
+    document.getElementById("profileUserName").textContent =
+        username;
+
+
+    /* ID */
+
+    document.getElementById("profileId").textContent =
+        userId;
+
+
+    /* Фото */
+
+    if (user.photo_url) {
+
+        const photo =
+            document.getElementById("profilePhoto");
+
+        photo.src = user.photo_url;
+
+    }
+
+}
+
+
 
 /* ========================= */
 /* КАТЕГОРИИ ИГР */
@@ -1073,19 +1143,16 @@ const navItems =
 
 
 /* ========================= */
-/* ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ */
+/* ПЕРЕКЛЮЧЕНИЕ */
 /* ========================= */
 
 navItems.forEach(button => {
 
     button.addEventListener("click", () => {
 
-
         const page =
             button.dataset.page;
 
-
-        /* Скрываем все страницы */
 
         gamesPage.style.display = "none";
 
@@ -1096,42 +1163,28 @@ navItems.forEach(button => {
         profilePage.style.display = "none";
 
 
-        /* Показываем нужную страницу */
-
         if (page === "games") {
-
             gamesPage.style.display = "block";
-
         }
 
 
         if (page === "contests") {
-
             contestsPage.style.display = "block";
-
         }
 
 
         if (page === "tasks") {
-
             tasksPage.style.display = "block";
-
         }
 
 
         if (page === "profile") {
-
             profilePage.style.display = "block";
-
         }
 
 
-        /* Активная кнопка */
-
         navItems.forEach(item => {
-
             item.classList.remove("selected");
-
         });
 
 
@@ -1140,7 +1193,6 @@ navItems.forEach(button => {
     });
 
 });
-
 
 
 /* ========================= */
@@ -1153,10 +1205,9 @@ const closeButton =
 
 closeButton.addEventListener("click", () => {
 
-    window.history.back();
+    tg.close();
 
 });
-
 
 </script>
 
